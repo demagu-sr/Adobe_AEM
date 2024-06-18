@@ -1,5 +1,5 @@
-# Overview of the Spring Boot Web Service
-This is a Spring Boot web service provides that provides Roman numeral conversion functionality. It exposes two endpoints:
+# Overview
+This is a web service provides that provides Roman numeral conversion functionality. It exposes two endpoints:
 
 ### Integer to Roman Numeral Conversion (v1)
 <em>Endpoint</em>:
