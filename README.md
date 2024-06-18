@@ -1,3 +1,47 @@
+# Overview of the Spring Boot Web Service
+This is a Spring Boot web service provides that provides Roman numeral conversion functionality. It exposes two endpoints:
+
+### Integer to Roman Numeral Conversion (v1)
+<em>Endpoint<em>:
+> /romannumeral/v1
+
+<em>Description:<em> Converts an integer input to its corresponding Roman numeral representation.
+
+<em>Supported Range:<em> 1 to 3999 (inclusive)
+
+<em>Example</em>
+> 
+> Request: GET /romannumeral/v1?query=42
+> 
+> Response: {"input": "42", "output": "XLII"}
+
+### Range Roman Numeral Conversion
+<em>Endpoint:<em>
+> /romannumeral
+
+<em>Description:<em> Converts a range of integers to a list of Roman numeral responses.
+
+<em>Supported Range:<em> 1 to 3999 (inclusive).
+
+<em>Example</em>
+> 
+> Request: GET /romannumeral?min=10&max=15
+>
+> Response: [{"input": "10", "output": "X"}, {"input": "11", "output": "XI"}, ...]
+
+### Health Check Endpoint
+<em>Example</em>:
+>
+> /healthcheck
+
+<em>Description:</em> Returns an HTTP 200 (OK) response with the body “Success.” This endpoint can be used for monitoring the service health.
+
+<em>Example<em>
+
+> Request: GET /healthcheck
+
+> Response: HTTP/1.1 200 OK Content-Type: text/plain Success
+
 ## Roman Numeral Specification:
 
 * [Wiki](https://en.wikipedia.org/wiki/Roman_numerals)
