@@ -2,12 +2,12 @@
 This is a Spring Boot web service provides that provides Roman numeral conversion functionality. It exposes two endpoints:
 
 ### Integer to Roman Numeral Conversion (v1)
-<em>Endpoint<em>:
+<em>Endpoint</em>:
 > /romannumeral/v1
 
-<em>Description:<em> Converts an integer input to its corresponding Roman numeral representation.
+<em>Description:</em> Converts an integer input to its corresponding Roman numeral representation.
 
-<em>Supported Range:<em> 1 to 3999 (inclusive)
+<em>Supported Range:</em> 1 to 3999 (inclusive)
 
 <em>Example</em>
 > 
@@ -16,12 +16,12 @@ This is a Spring Boot web service provides that provides Roman numeral conversio
 > Response: {"input": "42", "output": "XLII"}
 
 ### Range Roman Numeral Conversion
-<em>Endpoint:<em>
+<em>Endpoint:</em>
 > /romannumeral
 
-<em>Description:<em> Converts a range of integers to a list of Roman numeral responses.
+<em>Description:</em> Converts a range of integers to a list of Roman numeral responses.
 
-<em>Supported Range:<em> 1 to 3999 (inclusive).
+<em>Supported Range:</em> 1 to 3999 (inclusive).
 
 <em>Example</em>
 > 
@@ -36,7 +36,7 @@ This is a Spring Boot web service provides that provides Roman numeral conversio
 
 <em>Description:</em> Returns an HTTP 200 (OK) response with the body “Success.” This endpoint can be used for monitoring the service health.
 
-<em>Example<em>
+<em>Example</em>
 
 > Request: GET /healthcheck
 
