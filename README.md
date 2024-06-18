@@ -1,46 +1,50 @@
 # Overview
 This is a web service provides that provides Roman numeral conversion functionality. It exposes two endpoints along with health check endpoint:
 
-### Integer to Roman Numeral Conversion (v1)
-<em>Endpoint</em>:
-> /romannumeral/v1
+1. #### Integer to Roman Numeral Conversion (v1)
+   <em>Endpoint</em>:
+   > /romannumeral/v1
+   
+   <em>Description:</em> Converts an integer input to its corresponding Roman numeral representation.
+   
+   <em>Supported Range:</em> 1 to 3999 (inclusive)
+   
+   <em>Example</em>
+   > 
+   > Request: GET /romannumeral/v1?query=42
+   > 
+   > Response: {"input": "42", "output": "XLII"}
 
-<em>Description:</em> Converts an integer input to its corresponding Roman numeral representation.
 
-<em>Supported Range:</em> 1 to 3999 (inclusive)
+2. #### Range Roman Numeral Conversion
+   <em>Endpoint:</em>
+   > /romannumeral
+   
+   <em>Description:</em> Converts a range of integers to a list of Roman numeral responses.
+   
+   <em>Supported Range:</em> 1 to 3999 (inclusive).
+   
+   <em>Example</em>
+   > 
+   > Request: GET /romannumeral?min=10&max=15
+   >
+   > Response: [{"input": "10", "output": "X"}, {"input": "11", "output": "XI"}, ...]
 
-<em>Example</em>
-> 
-> Request: GET /romannumeral/v1?query=42
-> 
-> Response: {"input": "42", "output": "XLII"}
 
-### Range Roman Numeral Conversion
-<em>Endpoint:</em>
-> /romannumeral
+3. #### Health Check Endpoint
+   <em>Example</em>:
+   >
+   > /healthcheck
+   
+   <em>Description:</em> Returns an HTTP 200 (OK) response with the body “Success.” This endpoint can be used for monitoring the service health.
+   
+   <em>Example</em>
+   
+   > Request: GET /healthcheck
+   
+   > Response: HTTP/1.1 200 OK Content-Type: text/plain Success
 
-<em>Description:</em> Converts a range of integers to a list of Roman numeral responses.
 
-<em>Supported Range:</em> 1 to 3999 (inclusive).
-
-<em>Example</em>
-> 
-> Request: GET /romannumeral?min=10&max=15
->
-> Response: [{"input": "10", "output": "X"}, {"input": "11", "output": "XI"}, ...]
-
-### Health Check Endpoint
-<em>Example</em>:
->
-> /healthcheck
-
-<em>Description:</em> Returns an HTTP 200 (OK) response with the body “Success.” This endpoint can be used for monitoring the service health.
-
-<em>Example</em>
-
-> Request: GET /healthcheck
-
-> Response: HTTP/1.1 200 OK Content-Type: text/plain Success
 
 ## Roman Numeral Specification:
 
@@ -51,12 +55,18 @@ This is a web service provides that provides Roman numeral conversion functional
 
 This project is built, packaged through maven including dependency management. Tests are included to run as part of the build. This web service is built as a docker image to make it easier for deploying on containerized solutions. Docker file is configured with all the dependencies including building, packaging and installing all the required dependencies
 
+
 ### Instructions
 
 * Build the docker image using below command
-  * docker build -t adobe_aem
+  * docker build -t adobe
 * Run the docker image to start the web server
-  * docker run -p 8080:80 adobe_aem:latest
+  * docker run -p 8080:8080 adobe
+* Test the service locally that runs on port 8080
+  * Powershell cmd:
+    > Invoke-WebRequest -Uri http://localhost:8080/healthcheck
+  * Linux cmd:
+    > curl http://localhost:8080/healthcheck
 
 ## Packaging Layout
 
