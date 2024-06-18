@@ -1,5 +1,5 @@
 # Overview
-This is a web service provides that provides Roman numeral conversion functionality. It exposes two endpoints:
+This is a web service provides that provides Roman numeral conversion functionality. It exposes two endpoints along with health check endpoint:
 
 ### Integer to Roman Numeral Conversion (v1)
 <em>Endpoint</em>:
